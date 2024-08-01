@@ -1,0 +1,486 @@
+body {
+	background: #F5F5F5;
+}
+.login-bg {
+	background-color: #f2f4f5;
+}
+.login-desc {
+	padding-left: 40px;
+	padding-top: 100px;
+	color: #fff;
+	font-size: 16px;
+}
+.login-desc h2 {
+	margin-bottom: 40px;
+	font-size: 28px;
+}
+.login-desc p {
+	line-height: 22px;
+	text-indent: 38px;
+	background: url(../../images/login/login_desc_icon.png) no-repeat left center;
+}
+.login-main-area {
+	position: relative;
+	min-width: 1250px;
+	padding-bottom: 100px;
+	background: url(../images/bg.jpg) no-repeat 0 0;
+	background-attachment: fixed;
+	background-size: cover;
+	/*margin-top: 80px;*/
+}
+.bg-back {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+}
+.login-inner {
+	position: relative;
+	z-index: 20;
+}
+.login-main {
+	position: absolute;
+	right: 40px;
+	z-index: 50;
+	padding: 40px 40px 38px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 6px #888;
+	-moz-box-shadow: 0 1px 6px #888;
+	-ms-box-shadow: 0 1px 6px #888;
+	-o-box-shadow: 0 1px 6px #888;
+	box-shadow: 0 1px 6px #888;
+}
+.login-title {
+	font-weight: bold;
+	font-size: 22px;
+	color: #666;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.error-info {
+	display: none;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 32px;
+	font-size: 12px;
+	color: #ff3300;
+	background: #ffe0d9 url(../../images/login/error-icon.png) no-repeat 8px 8px;
+}
+.input-focus-error {
+	border-color: #ff3300 !important;
+}
+.login-form-item {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #ddd;
+	margin-top: 8px;
+	/*padding-left: 41px;*/
+}
+.login-form-item + .login-form-item{
+	margin-top: 16px;
+}
+.form-item-bg {
+	background-image: url(../../images/login/login_icons.png);
+	background-repeat: no-repeat;
+}
+.form-item-bg-user {
+	position: relative;
+	z-index: 50;
+	background-position: 9px -278px;
+}
+.form-item-bg-user.input-outer--focus {
+	background-position: 10px -239px;
+}
+.form-item-bg-lock {
+	background-position: 10px -196px;
+}
+.form-item-bg-lock.input-outer--focus {
+	background-position: 11px -155px;
+}
+.form-item-bg-captcha {
+	background-position: 10px -114px;
+}
+.form-item-bg-captcha.input-outer--focus {
+	background-position: 9px -73px;
+}
+.input-outer--focus {
+	border: 1px solid #009FD9;
+}
+.login-form-item input {
+	display: block;
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	font-size: 14px;
+	border: none;
+	outline: none;
+	font-family: "Microsoft Yahei", Tahoma, Arial;
+}
+/* 密码输入大写开启提示 */
+.form-item-bg-lock {
+	position: relative;
+}
+.caps-lock-remind {
+	 display: none;
+	position: absolute;
+	top: 33px;
+	left: 8px;
+	z-index: 31;
+	padding: 10px;
+	line-height: 12px;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 1px 3px 2px rgba(0, 159, 217, 0.2);
+	border: 1px solid #ccc;
+	font-size: 12px;
+}
+.caps-lock-remind:before,
+.caps-lock-remind:after {
+	content: "";
+	position: absolute;
+}
+.caps-lock-remind:before {
+	border: 4px solid transparent;
+	border-bottom-color: #fff;
+	top: -8px;
+	left: 42px;
+	z-index: 10;
+	margin-left: -8px;
+}
+.caps-lock-remind:after {
+	border: 6px solid transparent;
+	border-bottom-color: #ccc;
+	top: -12px;
+	left: 40px;
+	z-index: 9;
+	margin-left: -8px;
+}
+/* 控制 邮箱提示列表 的样式 */
+.email-complete-list {
+	position: absolute;
+	left: -1px;
+	right: 0;
+	top: 40px;
+	z-index: 10;
+	line-height: normal;
+}
+.email-complete-list .ui-autocomplete {
+	left: 0 !important;
+	right: 0 !important;
+	padding-top: 1px;
+	border-top-color: #009fd9;
+}
+.email-complete-list .ui-autocomplete .ui-menu-item {
+	padding-left: 41px;
+	overflow: hidden;
+}
+
+.captcha-deck {
+	display: none;
+	margin-top: 16px;
+}
+.captcha-item {
+	position: relative;
+	z-index: 30;
+	float: left;
+	margin-top: 0;
+	width: 128px;
+}
+.captcha-item input {
+	width: 90%;
+}
+.captcha-box {
+	position: relative;
+	z-index: 20;
+}
+.show-captcha {
+	margin: 0 0 0 8px;
+	cursor: pointer;
+	width: 132px;
+	height: 40px;
+}
+.refresh-captcha {
+	position: absolute;
+	right: 0;
+	top: 8px;
+	width: 24px;
+	height: 22px;
+	background: url(../../images/login/refresh-icon.png) no-repeat center center;
+	cursor: pointer;
+}
+.login-options {
+	margin-top: 18px;
+	line-height: 14px;
+}
+.idsave-check {
+	position: relative;
+	z-index: 10;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	color: #00aaff;
+	padding-left: 20px;
+	cursor: pointer;
+}
+.login-options a {
+	float: right;
+	color: #00aaff;
+	font-size: 14px;
+	text-decoration: none;
+}
+.login-options a:hover {
+	text-decoration: underline;
+}
+/*IE8下 checkbox 隐藏时，label的点击和js都无法改变 checked状态，所以使用定位达到“隐藏”的目的（被checkbox-icon图标盖住）*/
+.idsave-check input {
+	position: absolute;
+	z-index: -10;
+	left: 0;
+	top: 1px;
+	width: 1px;
+	height: 0px;
+}
+.checkbox-icon {
+	position: absolute;
+	left: 0;
+	top: 1px;
+	z-index: 10;
+	width: 16px;
+	height: 16px;
+	background: #fff url(../../images/login/login_icons.png) no-repeat -2px -48px;
+}
+.checkbox-icon-checked {
+	background-position: -2px -4px;
+}
+.login-submit {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #015bfe;
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin-top: 30px;
+}
+.login-submit:hover {
+	background-color: #41bcf9;
+}
+.login-submit.disabled {
+	background-color: #CCC;
+	cursor: not-allowed;
+}
+.login-submit.disabled:hover {
+	background-color: #CCC;
+}
+.go-reg {
+	font-size: 12px;
+	color: #999;
+	margin-top: 20px;
+}
+.go-reg a {
+	color: #00aaff;
+	text-decoration: none;
+	margin-left: 6px;
+}
+.go-reg a:hover {
+	text-decoration: underline;
+}
+/*大背景*/
+.bg-back-banner {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.bg-back-default {
+	display: block;
+}
+.bg-back-1 {
+	background: url(../../images/login/login_back_1.png) no-repeat center center #f3a932;
+}
+.bg-back-2 {
+	background: url(../../images/login/login_back_2.png) no-repeat center center #68be27;
+}
+.bg-back-3 {
+	background: url(../../images/login/login_back_3.png) no-repeat center center #00c4c4;
+}
+
+/*图案*/
+.pattern-area {
+	position: relative;
+	float: left;
+	width: 580px;
+	height: 587px;
+}
+.login-pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 580px;
+	height: 587px;
+}
+.pattern-1 {
+	background: url(../../images/login/login_pattern_1.png) no-repeat center;
+}
+.pattern-2 {
+	background: url(../../images/login/login_pattern_2.png) no-repeat center;
+}
+.pattern-3 {
+	background: url(../../images/login/login_pattern_3.png) no-repeat center;
+}
+/*切换按钮*/
+.bg-change {
+	text-align: center;
+}
+.bg-change ul {
+	display: inline-block;
+}
+.bg-change li {
+	float: left;
+	width: 32px;
+	height: 6px;
+	background-color: #fff;
+	opacity: 0.35;
+	filter:Alpha(opacity=35);
+	margin-right: 10px;
+}
+li.bg-change--current {
+	opacity: 1;
+	filter:Alpha(opacity=100);
+}
+
+
+/* 新增二维码登录 */
+.login-mode-wrapper{
+  position: relative;
+  top: -22px;
+  right: -20px;
+}
+.login-mode-inner{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.login-mode-text{
+  width: 69px;
+  height: 24px;
+  line-height: 24px;
+  color: #FF6600;
+  font-size: 12px;
+  margin-right: -4px;
+  background: url('./img/login-mode-tips.png') no-repeat;
+}
+.icon-login-mode{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  /* border: 1px dashed #969798; */
+}
+.icon-qrcode-login{
+  background-image: url('./img/icon-qrcode-login.png');
+}
+.icon-password-login{
+  background-image: url('./img/icon-password-login.png');
+}
+
+
+.login-qrcode-wrapper{
+  width: 300px;
+}
+.qrcode-content{
+  padding: 40px 40px 26px;
+}
+.qrcode-content .go-reg{
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+.qrcode-content .login-title{
+  margin-bottom: 25px;
+}
+
+.login-qrcode-content{
+  width: 160px;
+  margin: auto;
+}
+.login-qrcode-image{
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+.wx-qrcode-image{
+  width: 160px;
+  height: 160px;
+}
+.wx-qrcode-image iframe{
+  width: 100%;
+  height: 100%;
+}
+.login-qrcode-image img{
+  /* padding: 8px; */
+}
+.icon-scanning{
+  width: 32px;
+  height: 32px;
+  background: url('./img/icon-scanning.png') no-repeat;
+}
+
+.sm-tips-content{
+  font-size: 12px;
+  color: #666666;
+  line-height: 18px;
+  margin-left: 5px;
+}
+
+.sm-expire-time{
+  display: inline-block;
+  width: 20px;
+  color: #FF2200;
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+.login-qrcode-mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.login-qrcode-mask h3{
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.login-qrcode-mask button{
+  width: 60px;
+  height: 32px;
+  background: #00aaff;
+  border: 1px solid #009ceb;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+.login-qrcode-mask button:hover{
+  background: #1ca3e7;
+}
+
+.icon-qrcode-success{
+  width: 36px;
+  height: 36px;
+  margin-top: 20px;
+  background: url('./img/icon-qrcode-success.png') no-repeat;
+}

@@ -1,7 +1,11 @@
 {
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "https://ip.nifanfa.com/"
+    },
+    {
+      "src": "/(.*.aspx)",
       "dest": "https://ip.nifanfa.com/$1"
     }
   ]

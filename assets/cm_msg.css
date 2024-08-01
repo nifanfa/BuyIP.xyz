@@ -1,0 +1,390 @@
+
+.cm-alert-progress {
+  width: 13px;
+  height: 13px
+}
+
+.cm-alert__circle {
+  stroke-width: 2;
+  stroke-linecap: square;
+  fill: none;
+  transform: rotate(-90deg);
+  transform-origin: center
+}
+
+.cm-alert-stage:hover .cm-alert__circle {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important
+}
+
+.cm-alert__background {
+  stroke-width: 2;
+  fill: none
+}
+
+.cm-alert-stage {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  width: auto;
+  transform: translate(-50%, 0);
+  z-index: 20210928
+}
+
+.cm-alert-wrapper {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform: translate3d(-50%, 0, 0);
+  transition: height .3s ease, padding .3s ease;
+  padding: 6px 0;
+  will-change: transform, opacity
+}
+
+.cm-alert {
+  padding: 15px 15px 15px 20px;
+  /* border-radius: 3px; */
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform: translate3d(-50%, 0, 0);
+  display: flex;
+  align-items: center
+}
+
+.cm-alert-content,
+.cm-alert-icon,
+.cm-alert-wait {
+  display: inline-block
+}
+
+.cm-alert-icon {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.cm-alert-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.cm-alert-icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 11px
+}
+
+.cm-alert-wait {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  fill: #4eb127
+}
+
+.cm-alert-wait svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.cm-alert-close {
+  width: 14px;
+  height: 14px
+}
+
+.cm-alert-content {
+  margin: 0 10px;
+  min-width: 240px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, Microsoft Yahei, sans-serif;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .01)
+}
+
+.cm-alert.info {
+  color: #989898;
+  background-color: #f3f7fb;
+  border: 1px solid #E5E9ED;
+}
+.cm-alert.info .cm-alert-icon {
+  background-color: #E5E9ED
+}
+.cm-alert.info .cm-alert-content {
+  color: #E5E9ED;
+}
+.cm-alert.success {
+  color: #07B98B;
+  background-color: #e4fdf5;
+  border: 1px solid #b4fcf9;
+}
+
+.cm-alert.success .cm-alert-icon {
+  background-color: #07B98B
+}
+.cm-alert.success .cm-alert-content {
+  color: #07B98B;
+}
+
+.cm-alert.warning {
+  color: #F6AE54;
+  background-color: #fff5e8;
+  border: 1px solid #fddcb3;
+}
+
+.cm-alert.warning .cm-alert-icon {
+  background-color: #F6AE54
+}
+.cm-alert.warning .cm-alert-content {
+  color: #F6AE54;
+}
+
+.cm-alert.error {
+  color: #D93026;
+  background-color: #fff1f0;
+  border: 1px solid #fbbfbb;
+}
+
+.cm-alert.error .cm-alert-icon {
+  background-color: #D93026
+}
+.cm-alert.error .cm-alert-content {
+  color: #D93026;
+}
+
+.cm-alert.loading {
+  color: #0fafad;
+  background-color: #e7fdfc;
+  box-shadow: 0 0 2px 0 rgba(0, 1, 1, .01), 0 0 0 1px #c2faf9
+}
+.cm-alert.loading .cm-alert-content {
+  color: #0fafad;
+}
+
+.cm-alert_loading {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative
+}
+
+.cm-alert-circular {
+  -webkit-animation: cm-alert-rotate 2s linear infinite both;
+  animation: cm-alert-rotate 2s linear infinite both;
+  transform-origin: center center;
+  height: 18px !important;
+  width: 18px !important
+}
+
+.cm-alert-path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: #0fafad;
+  -webkit-animation: cm-alert-dash 1.5s ease-in-out infinite;
+  animation: cm-alert-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round
+}
+
+@-webkit-keyframes cm-alert-rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
+@keyframes cm-alert-rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+}
+
+@-webkit-keyframes cm-alert-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px
+  }
+}
+
+@keyframes cm-alert-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px
+  }
+}
+
+.cm-alert.info .cm-alert-wait {
+  /* fill: #0fafad; */
+  fill: #E5E9ED;
+}
+
+.cm-alert.success .cm-alert-wait {
+  fill: #07B98B
+}
+
+.cm-alert.warning .cm-alert-wait {
+  fill: #F6AE54
+}
+
+.cm-alert.error .cm-alert-wait {
+  fill: #D93026
+}
+
+.cm-alert.loading .cm-alert-wait {
+  fill: #0fafad
+}
+
+.cm-alert-pointer {
+  cursor: pointer
+}
+
+@-webkit-keyframes cm-alert_info {
+  0% {
+    stroke: #989898;
+  }
+
+  to {
+    stroke: #989898;
+    stroke-dasharray: 0 100
+  }
+}
+
+@keyframes cm-alert_info {
+  0% {
+    stroke: #989898;
+  }
+
+  to {
+    stroke: #989898;
+    stroke-dasharray: 0 100
+  }
+}
+
+@-webkit-keyframes cm-alert_success {
+  0% {
+    stroke: #07B98B
+  }
+
+  to {
+    stroke: #07B98B;
+    stroke-dasharray: 0 100
+  }
+}
+
+@keyframes cm-alert_success {
+  0% {
+    stroke: #07B98B
+  }
+
+  to {
+    stroke: #07B98B;
+    stroke-dasharray: 0 100
+  }
+}
+
+@-webkit-keyframes cm-alert_warning {
+  0% {
+    stroke: #F6AE54
+  }
+
+  to {
+    stroke: #F6AE54;
+    stroke-dasharray: 0 100
+  }
+}
+
+@keyframes cm-alert_warning {
+  0% {
+    stroke: #F6AE54
+  }
+
+  to {
+    stroke: #F6AE54;
+    stroke-dasharray: 0 100
+  }
+}
+
+@-webkit-keyframes cm-alert_error {
+  0% {
+    stroke: #D93026
+  }
+
+  to {
+    stroke: #D93026;
+    stroke-dasharray: 0 100
+  }
+}
+
+@keyframes cm-alert_error {
+  0% {
+    stroke: #D93026
+  }
+
+  to {
+    stroke: #D93026;
+    stroke-dasharray: 0 100
+  }
+}
+
+.cm-alert-fade-in {
+  -webkit-animation: cm-alert-fade .2s ease-out both;
+  animation: cm-alert-fade .2s ease-out both
+}
+
+.cm-alert-fade-out {
+  animation: cm-alert-fade .3s linear reverse both
+}
+
+@-webkit-keyframes cm-alert-fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, -80%, 0)
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0)
+  }
+}
+
+@keyframes cm-alert-fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, -80%, 0)
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0)
+  }
+}
